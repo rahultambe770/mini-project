@@ -29,12 +29,9 @@ public class ReportSeviceImpl implements reportService {
 
 	@Override
 	public List<citizenPlan> search(searchRequest SearchRequest) {
-//		
-
 		citizenPlan plan = new citizenPlan();
 		BeanUtils.copyProperties(SearchRequest, plan);
 		return repo.findAll(Example.of(plan));
-		
 	}
 
 	@Override
