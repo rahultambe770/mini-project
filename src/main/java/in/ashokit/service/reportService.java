@@ -1,9 +1,11 @@
 package in.ashokit.service;
 
+import java.io.ByteArrayInputStream;
 import java.util.List;
 
 import in.ashokit.entity.citizenPlan;
 import in.ashokit.request.searchRequest;
+import jakarta.servlet.http.HttpServletResponse;
 
 public interface reportService {
 	public List<String> getPlan();
@@ -12,7 +14,7 @@ public interface reportService {
 
 	public List<citizenPlan> search(searchRequest SearchRequest);
 
-	public boolean exportExcel();
+	public boolean exportExcel(HttpServletResponse response);
 
 	public boolean exportPdf();
 }

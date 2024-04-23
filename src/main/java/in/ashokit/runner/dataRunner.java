@@ -34,7 +34,7 @@ public class dataRunner implements ApplicationRunner {
 		c2.setPlanStatus("approved");
 		c2.setPlanStartDate(LocalDate.now());
 		c2.setPlanEndDate(LocalDate.now().plusMonths(6));
-
+		c2.setBenefitAmt(1200.2);
 		repo.saveAll(Arrays.asList(c1, c2));
 
 	}
