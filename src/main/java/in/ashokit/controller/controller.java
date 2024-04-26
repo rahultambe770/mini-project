@@ -25,7 +25,6 @@ public class controller {
 
 	@PostMapping("/all")
 	public List<citizenPlan> getAll(@RequestBody searchRequest data) {
-//		System.out.println(data);
 		return service.search(data);
 	}
 
@@ -33,9 +32,14 @@ public class controller {
 	public void getExcel(HttpServletResponse response) {
 		response.setContentType("application/octet-stream");
 		response.addHeader("content-Disposition", "attachment ; filename=plans.xls");
-
 		service.exportExcel(response);
-
+	}
+	@GetMapping("/pdf")
+	public void getPdf(HttpServletResponse response) {
+		response.setContentType("application/pdf");
+		response.addHeader("content-Disposition", "attachment;filename=plans.pdf");
+		service.exportPdf(response);
+		
 	}
 
 }

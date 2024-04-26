@@ -1,6 +1,5 @@
 package in.ashokit.service;
 
-import java.io.ByteArrayInputStream;
 import java.util.List;
 
 import in.ashokit.entity.citizenPlan;
@@ -16,5 +15,5 @@ public interface reportService {
 
 	public boolean exportExcel(HttpServletResponse response);
 
-	public boolean exportPdf();
+	public boolean exportPdf(HttpServletResponse response);
 }
